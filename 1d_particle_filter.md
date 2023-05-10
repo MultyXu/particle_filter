@@ -12,4 +12,12 @@ I'm planning to replicate the example in the youtube video. The example is a pla
    3. after process every particle, do a resampling 
    4. take the highly weight particles, and generate new samples around those particles
 3. Advance time step, moving the plane and the particles by the control (3m/s)
-4. repeat 2 and 3 until find good estimation 
+4. repeat 2 and 3 until find good estimation
+
+
+### sampling
+really simple sampling:
+  1. calculate the total weight and normalize it from 0 to 1
+  2. sample the 1/M (M is the number of particles you want to get)
+  3. check which interval the point lies in 
+low variance resampling
