@@ -1,7 +1,10 @@
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import numpy as np
 
+
+mpl.rcParams['animation.ffmpeg_path'] = "/Users/multyxu/Desktop/Programming/ffmpeg"
 # np.random.seed(478301)
 
 # global variables that uses accross the programe
@@ -91,8 +94,9 @@ def animate(frame):
 ani = animation.FuncAnimation(
     fig, animate, interval=1000, frames=STEP_NUM + 1, repeat=False)
 
-FFwriter = animation.PillowWriter(fps=3)
-file = "/Users/multyxu/Desktop/Programming/particle_filter/1d_particle_filter.gif"
+# FFwriter = animation.PillowWriter(fps=3)
+FFwriter = animation.FFMpegWriter(fps=3)
+file = "/Users/multyxu/Desktop/Programming/particle_filter/1d_particle_filter.mp4"
 ani.save(file, writer = FFwriter)
 # plt.plot(20, 30, "o:r")
 # plt.show()
