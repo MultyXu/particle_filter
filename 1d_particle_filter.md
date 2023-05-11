@@ -21,3 +21,6 @@ really simple sampling:
   2. sample the 1/M (M is the number of particles you want to get)
   3. check which interval the point lies in 
 low variance resampling
+
+# Result
+![1d_git](1d_particle_filter.gif)
